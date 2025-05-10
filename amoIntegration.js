@@ -2,9 +2,9 @@ const fetch = require("node-fetch");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const fetchAccountInfo = async () => {
+export const fetchAccountInfo = async () => {
   const subdomain = process.env.AMOCRM_SUBDOMAIN; // Поддомен нужного аккаунта
-  const accessToken = "xxxx"; // Ваш access_token
+  const accessToken = process.env.AMOCRM_ACCESS_TOKEN; // Ваш access_token
   const url = `https://${subdomain}.amocrm.ru/api/v4/account`;
 
   const headers = {
